@@ -62,7 +62,7 @@ FLAGS.DUMP_DIR = DUMP_DIR
 AP_IOU_THRESHOLDS = [float(x) for x in FLAGS.ap_iou_thresholds.split(',')]
 
 # Prepare DUMP_DIR
-if not os.path.exists(DUMP_DIR): os.mkdir(DUMP_DIR)
+if not os.path.exists(DUMP_DIR): os.makedirs(DUMP_DIR)   
 if FLAGS.transductive:
     split_set = 'train'
     DUMP_FOUT = open(os.path.join(DUMP_DIR, 'log_eval_transductive.txt'), 'w')
